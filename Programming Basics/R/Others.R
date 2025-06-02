@@ -52,3 +52,39 @@ print('-------------------------')
 # Data frames are the most common way of storing and analyzing data in R.
 # The columns (which are vectors) can be of different types, but they must be the same length.
 # You can think of a data frame as a collection of vectors that all must be the same length.
+df <- data.frame(name=c('Collins', 'Melvin', 'Lucy', 'Vincent', 'Zakayo'), age=c(22, 21, 30, 25, 55), gender=c('Male', 'Female', 'Female', 'Male', 'Male'))
+
+print(df)
+print(dim(df)) # to get the dimensions of the dataframe (row x columns)
+
+print(colnames(df)) # returns column names of the dataframe
+print(rownames(df)) # returns the row labels/names
+
+# dataframe subsetting
+# specefic rows and all colums
+print(df[c(1, 3, 5), ])
+print("-----------------")
+
+# select specific colums
+print(df[c('name', 'gender')])
+
+# one column & all row
+print(df['age'])
+
+# Return the column named "name" with all of the rows (using "$" returns the vector):
+print(df$name)
+
+# Return the first two rows of the first two columns:
+print(df[1:2, 1:2])
+
+# or use
+print(df[1:2, c('name', 'age')])
+
+# Logical subsetting
+# By placing the logical expression from above within the square brackets of the data frame, 
+# only the TRUE rows will be returned.
+
+
+# Return the rows where the column "age" is less than 18, and return the columns "age" and "name": 
+
+print(df[df$age < 23, c("age", "name")])
